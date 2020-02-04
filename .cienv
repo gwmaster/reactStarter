@@ -1,0 +1,2 @@
+includeLocales = false
+env.locales = "en,ru"

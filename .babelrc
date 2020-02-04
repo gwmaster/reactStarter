@@ -1,0 +1,32 @@
+{
+    "presets": [
+        "react",
+        "es2015",
+        "stage-2",
+        "stage-0"
+    ],
+     // npm install --save-dev babel-preset-stage-2
+     // npm install babel-preset-stage-0 --save
+     //ES7
+    "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        [
+            "transform-runtime", {
+            "polyfill": false,
+            "regenerator": true
+        }
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": false // or 'css'
+            }
+        ]
+    ]
+    // npm install babel-plugin-transform-class-properties
+    // npm install babel-plugin-transform-decorators-legacy --save-dev
+    // for saga
+    // npm install --save-dev babel-plugin-transform-runtime
+}

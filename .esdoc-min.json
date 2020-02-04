@@ -1,0 +1,29 @@
+{
+  "source": "./src",
+  "index": "./README.md",
+  "destination": "./doc-min",
+  "plugins": [
+    {"name": "esdoc-publish-html-plugin"},
+    {"name": "esdoc-jsx-plugin", "option": {"enable": true}},
+    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": {"enable": true},
+        "coverage": {"enable": true},
+        "accessor": {"access": ["public", "protected", "private"], "autoPrivate": true},
+        "undocumentIdentifier": {"enable": false},
+        "unexportedIdentifier": {"enable": true},
+        "typeInference": {"enable": false},
+        "brand": {
+          "logo": "",
+          "title": "",
+          "description": "",
+          "repository": "",
+          "site": "https://esdoc.org/manual/tags.html",
+          "image": "http://my-library.org/logo.png"
+        }
+      }
+    }
+  ]
+}

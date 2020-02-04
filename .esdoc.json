@@ -1,0 +1,28 @@
+{
+  "source": "./src",
+  "destination": "./doc",
+  "plugins": [
+    {"name": "esdoc-publish-html-plugin"},
+    {"name": "esdoc-jsx-plugin", "option": {"enable": true}},
+    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": {"enable": true},
+        "coverage": {"enable": true},
+        "accessor": {"access": ["public", "protected", "private"], "autoPrivate": false},
+        "undocumentIdentifier": {"enable": true},
+        "unexportedIdentifier": {"enable": true},
+        "typeInference": {"enable": true},
+        "brand": {
+          "logo": "./src/assets/logo.png",
+          "title": "Title",
+          "description": "project doc",
+          "repository": "",
+          "site": "https://esdoc.org/manual/tags.html",
+          "image": "http://my-library.org/logo.png"
+        }
+      }
+    }
+  ]
+}
