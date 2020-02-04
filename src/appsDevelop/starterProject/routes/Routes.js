@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {Fragment} from 'react'
 import { Route, Switch } from 'react-router'
 import NavBar from '../containers/NavBar/NavBar'
 
@@ -16,13 +16,13 @@ const Home = () => (
 )
 
 const routes = (
-    <div>
+    <Fragment>
       <NavBar />
       <Switch>
           <Route exact path="/" component={Home} />
-        <Route component={NoMatch} />
+          <Route component={NoMatch} />
       </Switch>
-    </div>
+    </Fragment>
 )
 
 export default routes

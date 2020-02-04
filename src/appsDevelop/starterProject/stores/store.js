@@ -15,8 +15,9 @@ const history = createHashHistory()
 // router reducer recive history
 import { connectRouter } from 'connected-react-router'
 const createRootReducer = (history , myReducers) => combineReducers({
+    // routes reducer
     router: connectRouter(history),
-    // rest of your reducers
+    // rest of reducers
     ...myReducers
 })
 
