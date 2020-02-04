@@ -1,7 +1,9 @@
 import React , {Fragment} from 'react'
 import { Route, Switch } from 'react-router'
 import NavBar from '../containers/NavBar/NavBar'
-
+import Header from '../containers/Header/Header'
+import {ROUTES} from '../stores/constants'
+const {PAGES} = ROUTES
 
 const NoMatch = () => (
     <div>
@@ -16,13 +18,21 @@ const Home = () => (
 )
 
 const routes = (
-    <Fragment>
-      <NavBar />
-      <Switch>
-          <Route exact path="/" component={Home} />
-          <Route component={NoMatch} />
-      </Switch>
-    </Fragment>
+    <div className="routes-container">
+        <div className="nav-bar">
+            <NavBar />
+        </div>
+        <div className="header">
+            <Header />
+        </div>
+        <div className="content">
+            <Switch>
+                <Route exact path={PAGES.HOME} component={Home} />
+                <Route component={NoMatch} />
+            </Switch>
+        </div>
+
+    </div>
 )
 
 export default routes

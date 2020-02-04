@@ -1,3 +1,50 @@
-.nav-bar{
-  width: @nav-bar-width;
+.nav-bar-component {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: @header-height 1fr;
+  grid-template-areas: "logo" "menu";
+  height: 100vh; // fill full height
+  background-color: @nav-bar-background-color;
+  .logo {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "collapsed-button logo-text";
+    grid-area: logo;
+
+  }
+  .collapsed-button {
+    grid-area: collapsed-button;
+    place-self: center;
+    color: @white;
+  }
+  .logo-text {
+    grid-area: logo-text;
+    justify-items: start;
+    align-self: center;
+    color: @white;
+  }
+  .menu {
+    grid-area: menu;
+    &.nav-bar-folded {
+      width: @nav-bar-folded ;
+    }
+    &.nav-bar-unfolded{
+      width: @nav-bar-unfolded;
+    }
+  }
+
+  .ant-menu-submenu-selected {
+    background-color: @primary-color;
+    color: @white !important;
+  }
+
+  .ant-menu-dark {
+    background-color: @nav-bar-background-color;
+  }
+
+  .logo {
+    height: @header-height;
+    background-color: @nav-bar-logi-background-color;
+  }
 }

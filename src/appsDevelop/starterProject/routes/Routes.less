@@ -1,0 +1,12 @@
+.routes-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: @header-height 1fr;
+  grid-template-areas: "nav-bar header" "nav-bar content";
+}
+
+.nav-bar { grid-area: nav-bar; }
+
+.content { grid-area: content; }
+
+.header { grid-area: header; }

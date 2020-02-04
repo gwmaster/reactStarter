@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState , Fragment} from 'react'
 import {connect} from 'react-redux'
-import { Menu, Icon, Switch } from 'antd';
+import { Menu, Icon, Switch , Button } from 'antd';
 const { SubMenu } = Menu;
 import {mapStoreToProps,mapActionsToProps} from 'fast-redux-reducer'
 import {RoutesActions} from '../../stores/actions'
-import {ROUTES} from '../../stores/constants'
+import {ROUTES , NavBarActions} from '../../stores/constants'
 const {PAGES} = ROUTES
 
 
@@ -15,10 +15,9 @@ const MenuItem = ({path,...props}) => {
 
 function NavBar(props) {
     // reducer
-    const {router : {location : {pathname}}} = props;
+    const {router : {location : {pathname}} , navBarIsCollapsed : collapsed} = props;
     // actions
-    const {navigate} = props
-
+    const {navigate , setCollapsed} = props
     const onSelect = ({ item, key, keyPath, selectedKeys, domEvent }) => {
         navigate(key)
 
@@ -26,22 +25,51 @@ function NavBar(props) {
     const getName = (path) => {
         return path.split("/").pop()
     }
+    const toggleCollapsed = (event) => {
+        setCollapsed(!collapsed)
+    }
+
+    const CollapsButton = () => (
+        <div className='collapsed-button'>
+            <div onClick={toggleCollapsed}>
+                <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
+            </div>
+        </div>
+    )
+
+    const Logo = () => {
+        if(collapsed){
+            return <CollapsButton/>
+        }
+        return (
+            <Fragment>
+                <CollapsButton/>
+                <div className='logo-text'>
+                    Project Starter
+                </div>
+            </Fragment>
+        )
+    }
+
     return (
-        <div className='nav-bar'>
-            {JSON.stringify(pathname)}
+        <div className='nav-bar-component'>
+            <div className='logo'>
+               <Logo/>
+            </div>
             <Menu
-                className='menu'
+                className={`menu ${collapsed ? 'nav-bar-folded' : 'nav-bar-unfolded'}`}
                 selectedKeys={pathname}
                 mode='vertical'
                 theme='dark'
                 onSelect = {onSelect}
+                inlineCollapsed={collapsed}
             >
                 <SubMenu title={<span><Icon type="tool" /><span>Develop</span></span>}>
                     <Menu.Item key={PAGES.DEVELOP.REST_API}>{getName(PAGES.DEVELOP.REST_API)}</Menu.Item>
                     <Menu.Item key={PAGES.DEVELOP.I18}>{getName(PAGES.DEVELOP.I18)}</Menu.Item>
                     <Menu.Item key={PAGES.DEVELOP.REDUCERS_MANAGER}>{getName(PAGES.DEVELOP.REDUCERS_MANAGER)}</Menu.Item>
                 </SubMenu>
-                <Menu.Item key={PAGES.HOME}>{getName(PAGES.HOME)}</Menu.Item>
+                <Menu.Item key={PAGES.HOME} ><span><Icon type="home" /><span>{getName(PAGES.HOME)}</span></span></Menu.Item>
             </Menu>
         </div>
     )
@@ -59,6 +87,6 @@ NavBar.propTypes = {};
 NavBar.defaultProps = {};
 
 export default connect(
-    mapStoreToProps('router'),
-    mapActionsToProps(RoutesActions)
+    mapStoreToProps('router','navBarIsCollapsed'),
+    mapActionsToProps(RoutesActions , NavBarActions)
 )(NavBar)
