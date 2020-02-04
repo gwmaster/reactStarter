@@ -7,6 +7,15 @@
 
 .nav-bar { grid-area: nav-bar; }
 
-.content { grid-area: content; }
+.content {
+  grid-area: content;
+  background-color: @content-background-color;
+  .content-card{
+    border-radius: 5px;
+    margin: @content-margin;
+    height: calc(100% - @content-margin*2);
+    background-color: @content-card-background-color;
+  }
+}
 
 .header { grid-area: header; }
