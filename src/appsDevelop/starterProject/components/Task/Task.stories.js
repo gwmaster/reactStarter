@@ -4,12 +4,14 @@ import { withKnobs, object } from '@storybook/addon-knobs/react';
 import Task from "./Task";
 
 export default {
-    title: 'Taks Component',
+    title: 'starterProject|Component',
 };
 
 const taskData = {
     label :"Hello"
 }
+
+
 
 export const task = () => {
     return <Task {...object('Task Data', { ...taskData })} onClick={action('button-click')}/>;

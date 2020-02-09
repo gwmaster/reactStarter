@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@storybook/react/demo';
 
-export default { title: 'starterProject' };
+export default { title: 'starterProject|example' };
 
 export const withText = () => <Button>Hello Button</Button>;
 
