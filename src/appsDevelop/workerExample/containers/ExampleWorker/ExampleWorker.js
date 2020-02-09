@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { ExampleWorkerActions } from './ExampleWorker.action'
-import Slider from '../Animations/Slider'
+import Slider from '../../components/Animations/Slider'
 import './style.css'
-import Timer from '../Animations/Timer'
+import Timer from '../../components/Animations/Timer'
 
 function ExampleWorker (props) {
   // action
