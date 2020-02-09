@@ -3,9 +3,9 @@ import { withKnobs,text , number , select, boolean } from '@storybook/addon-knob
 import {Avatar} from "./Avatar";
 
 export default {
-    title: 'starterProject|Avatar',
+    title: 'starterProject|Components/Avatar',
 };
-export const knobs = () => (
+export const avatar = () => (
     <div>
         <a href="https://www.npmjs.com/package/@storybook/addon-knobs" target='_blank'>knobs</a>
         <Avatar
@@ -19,6 +19,6 @@ export const knobs = () => (
 
 );
 
-knobs.story = {
+avatar.story = {
     decorators: [withKnobs],
 };

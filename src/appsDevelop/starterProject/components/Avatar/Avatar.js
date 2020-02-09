@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types';
+import './Avatar.less'
 
 export const Avatar = ({label , loading  , size , counter }) => {
   return (
-      <div>
+      <div className='test'>
           Avatar - {label}
           <br/>
           loading : {JSON.stringify(loading)}

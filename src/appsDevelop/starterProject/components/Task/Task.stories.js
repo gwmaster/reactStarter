@@ -4,7 +4,7 @@ import { withKnobs, object } from '@storybook/addon-knobs/react';
 import Task from "./Task";
 
 export default {
-    title: 'starterProject|Component',
+    title: 'starterProject|Components/Task',
 };
 
 const taskData = {
