@@ -1,12 +1,28 @@
 {
     "presets": [
-        [
-            "@babel/preset-env"
-        ],
-        "@babel/preset-react"
+        "react",
+        "es2015",
+        "stage-2",
+        "stage-0"
     ],
+     // npm install --save-dev babel-preset-stage-2
+     // npm install babel-preset-stage-0 --save
+     //ES7
     "plugins": [
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-transform-runtime"
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        [
+            "transform-runtime", {
+            "polyfill": false,
+            "regenerator": true
+        }
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": false // or 'css'
+            }
+        ]
     ]
 }
