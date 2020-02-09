@@ -27,6 +27,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-knobs": "^5.3.12",
+    "@storybook/addon-links": "^5.3.12",
     "@storybook/react": "^5.3.12",
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.3",
