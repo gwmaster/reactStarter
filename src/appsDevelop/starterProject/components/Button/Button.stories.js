@@ -3,11 +3,15 @@ import { withKnobs,text , number , select, boolean } from '@storybook/addon-knob
 import {Button} from "antd";
 import '../../styles/index.less'
 import {action} from "@storybook/addon-actions";
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
+
+
 
 export default {
     title: 'starterProject|Components/Button',
+    component: Button
 };
-export const avatar = () => (
+export const button = () => (
     <div>
         <a href="https://www.npmjs.com/package/@storybook/addon-knobs" target='_blank'>knobs</a>
         <br/>
@@ -18,10 +22,12 @@ export const avatar = () => (
             loading={boolean('loading' , false)}
             onClick={action('onClick')}
         >{text('Label' , 'Label')}</Button>
+
+        <Meta title="Demo/Button" component={Button} />
     </div>
 
 );
 
-avatar.story = {
+button.story = {
     decorators: [withKnobs],
 };

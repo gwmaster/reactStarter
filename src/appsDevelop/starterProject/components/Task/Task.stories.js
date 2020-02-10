@@ -5,6 +5,7 @@ import Task from "./Task";
 
 export default {
     title: 'starterProject|Components/Task',
+    component : Task
 };
 
 const taskData = {
