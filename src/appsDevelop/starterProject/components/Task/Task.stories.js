@@ -11,8 +11,6 @@ const taskData = {
     label :"Hello"
 }
 
-
-
 export const task = () => {
     return <Task {...object('Task Data', { ...taskData })} onClick={action('button-click')}/>;
 };
