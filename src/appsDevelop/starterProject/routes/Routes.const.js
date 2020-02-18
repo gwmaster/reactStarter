@@ -6,7 +6,6 @@ const PAGES = {
   HOME : `${ROOT}/home`,
   DEVELOP : {
     REST_API : `${DEVELOP}/rest-api`,
-    REDUCERS_MANAGER : `${DEVELOP}/reducers-manager`,
     SVG_PREVIEW : `${DEVELOP}/svg_preview`,
     I18 : `${DEVELOP}/i18`,
     ROUTES_EXAMPLE : `${DEVELOP}/routes-example`,

@@ -15,9 +15,11 @@ export function customSlicer () {
     return (state) => {
         const {
             localStorageSavedData,
+            reducerViwerLiveViewReducers
         } = state
         return {
             localStorageSavedData,
+            reducerViwerLiveViewReducers
         }
     }
 }
