@@ -16,10 +16,12 @@ export const reducersObject = {
 export function customSlicer () {
     return (state) => {
         const {
+            i18SelectedLanguage,
             localStorageSavedData,
-            reducerViwerLiveViewReducers
+            reducerViwerLiveViewReducers,
         } = state
         return {
+            i18SelectedLanguage,
             localStorageSavedData,
             reducerViwerLiveViewReducers
         }
