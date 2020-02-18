@@ -3,13 +3,11 @@ import axios from 'axios'
 import { loadTranslations, setLocale } from 'react-redux-i18n'
 
 import { I_18 } from './i18.const'
-import { WORKERS } from '../../storesWorker/const'
 
 function * loadTranslate () {
   let {
     i18SelectedLanguage
   } = yield select(state => state)
-
   const translateArr = TRANSLATE
   const translateObj = {}
 
@@ -24,13 +22,13 @@ function * loadTranslate () {
     name: translateObj[prefix].languageName
   }))
 
-  yield put({ type: I_18.SET_AVAIBLE_LANGUAGES, payload: langArr, sendTo: WORKERS.MAIN })
-  yield put({ type: I_18.SET_LANGUAGES_FILE_DATA, payload: translateObj, sendTo: WORKERS.MAIN })
+  yield put({ type: I_18.SET_AVAIBLE_LANGUAGES, payload: langArr})
+  yield put({ type: I_18.SET_LANGUAGES_FILE_DATA, payload: translateObj})
 
   if (i18SelectedLanguage && translateObj[i18SelectedLanguage]) {
     yield put(setLocale(i18SelectedLanguage))
   } else {
-    yield put({ type: I_18.SET_LANGUAGE, payload: langArr[0].prefix, sendTo: WORKERS.MAIN })
+    yield put({ type: I_18.SET_LANGUAGE, payload: langArr[0].prefix })
   }
 }
 

@@ -14,29 +14,28 @@ function i18 (props) {
   // actions
   const { loadTranslate, setLanguage } = props
   // reducers
-  const { i18SelectedLanguage, i18AvailableLanguages } = props
-
+  const { i18SelectedLanguage , i18AvailableLanguages } = props
   useEffect(() => {
     // component did mount
     loadTranslate()
   }, [])
 
-  function handleChange (value) {
-    setLanguage(value)
-  }
-
-  if (i18AvailableLanguages.length == 1) {
+  if (i18SelectedLanguage == null || i18AvailableLanguages.length < 2) {
     return null
   }
 
-  return (
-    <div>
-      <Select value={i18SelectedLanguage} style={{ width: 120 }} onChange={handleChange}>
-        {i18AvailableLanguages.map(item => {
-          return <Option key={item.prefix} value={item.prefix}>{item.name}</Option>
-        })}
-      </Select>
-    </div>)
+    function handleChange (value) {
+      setLanguage(value)
+    }
+
+    return (
+      <div>
+        <Select value={i18SelectedLanguage} style={{ width: 120 }} onChange={handleChange}>
+          {i18AvailableLanguages.map(item => {
+            return <Option key={item.prefix} value={item.prefix}>{item.name}</Option>
+          })}
+        </Select>
+      </div>)
 }
 
 function mapActionsToProps (dispatch) {

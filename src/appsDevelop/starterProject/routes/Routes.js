@@ -1,11 +1,13 @@
 import React , {Fragment} from 'react'
 import { Route, Switch } from 'react-router'
+import {ROUTES} from '../stores/constants'
 import NavBar from '../containers/NavBar/NavBar'
 import Header from '../containers/Header/Header'
 import Home  from '../containers/Home/Home'
 import LocalStorage from "../containers/Develop/LocalStorage/LocalStorage";
-import {ROUTES} from '../stores/constants'
 import ReducersViewer from "../containers/ReducersViewer/ReducersViewer";
+import I18 from '../containers/Develop/i18/I18'
+
 const {PAGES} = ROUTES
 
 const NoMatch = () => (
@@ -28,6 +30,7 @@ const routes = (
                     <Route exact path={PAGES.HOME} component={Home} />
                     <Route exact path={PAGES.DEVELOP.LOCAL_STORAGE} component={LocalStorage} />
                     <Route exact path={PAGES.DEVELOP.REDUCERS_VIEWER} component={ReducersViewer} />
+                    <Route exact path={PAGES.DEVELOP.I18} component={I18} />
                     <Route component={NoMatch} />
                 </Switch>
             </div>
