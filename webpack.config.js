@@ -93,8 +93,8 @@ module.exports = {
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(true),
       TRANSLATE: JSON.stringify(translateArr),
-    })
-   // new CopyWebpackPlugin([{ from: './src/' + appFolder + '/' + appName + '/img', to: 'img' }]), // copy project assets to project
+    }),
+    new CopyWebpackPlugin([{ from: './src/' + appFolder + '/' + appName + '/img', to: 'img' }]), // copy project assets to project
     /*new BundleAnalyzerPlugin({
       // Port that will be used by in `server` mode to start HTTP server.
       analyzerPort: 4000,

@@ -1,0 +1,5 @@
+const pr = 'REDUCERS_VIWER_'
+
+export const REDUCERS_VIWER = {
+    SET_LIVE_VIEWR_REDUCERS: `${pr}  SET_LIVE_VIEWR_REDUCERS`,
+}

@@ -1,0 +1,8 @@
+.jsoneditor-react-container {
+    width: 100%;
+    height: 700px;
+}
+
+.jsoneditor-tree {
+    background-color: white;
+}

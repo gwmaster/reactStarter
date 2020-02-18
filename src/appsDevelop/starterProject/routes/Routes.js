@@ -5,6 +5,7 @@ import Header from '../containers/Header/Header'
 import Home  from '../containers/Home/Home'
 import LocalStorage from "../containers/Develop/LocalStorage/LocalStorage";
 import {ROUTES} from '../stores/constants'
+import ReducersViewer from "../containers/ReducersViewer/ReducersViewer";
 const {PAGES} = ROUTES
 
 const NoMatch = () => (
@@ -26,6 +27,7 @@ const routes = (
                 <Switch>
                     <Route exact path={PAGES.HOME} component={Home} />
                     <Route exact path={PAGES.DEVELOP.LOCAL_STORAGE} component={LocalStorage} />
+                    <Route exact path={PAGES.DEVELOP.REDUCERS_VIEWER} component={ReducersViewer} />
                     <Route component={NoMatch} />
                 </Switch>
             </div>

@@ -69,6 +69,7 @@ function NavBar(props) {
                     <Menu.Item key={PAGES.DEVELOP.I18}>{getName(PAGES.DEVELOP.I18)}</Menu.Item>
                     <Menu.Item key={PAGES.DEVELOP.REDUCERS_MANAGER}>{getName(PAGES.DEVELOP.REDUCERS_MANAGER)}</Menu.Item>
                     <Menu.Item key={PAGES.DEVELOP.LOCAL_STORAGE}>{getName(PAGES.DEVELOP.LOCAL_STORAGE)}</Menu.Item>
+                    <Menu.Item key={PAGES.DEVELOP.REDUCERS_VIEWER}>{getName(PAGES.DEVELOP.REDUCERS_VIEWER)}</Menu.Item>
                 </SubMenu>
                 <Menu.Item key={PAGES.HOME} ><span><Icon type="home" /><span>{getName(PAGES.HOME)}</span></span></Menu.Item>
             </Menu>
