@@ -1,8 +1,10 @@
 import {autoReducer} from 'fast-redux-reducer'
 import NavBar from '../containers/NavBar/NavBar.reducer'
+import MainConfig from '../mainConfig/mainConfig.reducer'
 import LocalStorage from "../containers/Develop/LocalStorage/LocalStorage.reducer";
 
 export const reducersObject = {
+    MainConfig,
     NavBar,
     LocalStorage
 }

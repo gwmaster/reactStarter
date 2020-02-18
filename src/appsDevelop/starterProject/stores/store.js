@@ -11,11 +11,11 @@ import localstorage from 'redux-localstorage'
 import StoreWorker from './storeWorker/store.worker'
 // connected-react-router
 import { createBrowserHistory  , createHashHistory} from 'history'
-import { routerMiddleware } from 'connected-react-router'
+
 const history = createHashHistory()
 
 // router reducer recive history
-import { connectRouter } from 'connected-react-router'
+import {connectRouter , routerMiddleware } from 'connected-react-router'
 const createRootReducer = (history , myReducers) => combineReducers({
     // routes reducer
     router: connectRouter(history),
