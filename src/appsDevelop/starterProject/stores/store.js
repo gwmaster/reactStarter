@@ -11,12 +11,17 @@ import localstorage from 'redux-localstorage'
 import StoreWorker from './storeWorker/store.worker'
 // connected-react-router
 import { createBrowserHistory  , createHashHistory} from 'history'
+// load Translations
+import thunk from 'redux-thunk'
+import { i18nReducer, syncTranslationWithStore } from 'react-redux-i18n'
 
 const history = createHashHistory()
 
 // router reducer recive history
 import {connectRouter , routerMiddleware } from 'connected-react-router'
 const createRootReducer = (history , myReducers) => combineReducers({
+    // i18
+    i18n: i18nReducer,
     // routes reducer
     router: connectRouter(history),
     // rest of reducers
@@ -28,8 +33,9 @@ export function configureStore() {
     const [workerMiddleware,initWorkerMiddleware] = new toWorkerMiddleware()
 
     const middleware = [
-        workerMiddleware, // must be first
+        thunk,
         routerMiddleware(history),
+        workerMiddleware, // must be first
         sagaMiddleware,
     ]
     initLog(middleware)
@@ -41,6 +47,8 @@ export function configureStore() {
             applyMiddleware(...middleware)
         )
     )
+    // i18
+    syncTranslationWithStore(store)
     // then run the saga
     sagaMiddleware.run(mySaga)
     // then init worker
