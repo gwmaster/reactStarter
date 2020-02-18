@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const SampleCode = ({componentName , params : recivedParams}) => {
-    const {children , ...params} = recivedParams
+const SampleCode = ({componentName , params : recivedParams = {}}) => {
+    const {children = null , ...params} = recivedParams
     const parseParam = (name) => {
         const value = params[name];
         const type =typeof  value;
@@ -25,7 +25,7 @@ const SampleCode = ({componentName , params : recivedParams}) => {
     code += '\n'
     code += Object.keys(params).map((name,value) => parseParam(name)).join('\n')
     code += '>'
-    code += `\n${children}\n`
+    children ?  code += `\n${children}\n` : false
     code += `</${componentName}>`
   return (
       <SyntaxHighlighter language="javascript" style={dark}>

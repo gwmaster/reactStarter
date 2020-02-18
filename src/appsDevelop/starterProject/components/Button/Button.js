@@ -26,7 +26,7 @@ Button.propTypes = {
     onClick : PropTypes.func
 }
 Button.defaultProps = {
-
+    size : 12
 }
 
 export default Button

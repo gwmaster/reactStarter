@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router'
 import NavBar from '../containers/NavBar/NavBar'
 import Header from '../containers/Header/Header'
 import Home  from '../containers/Home/Home'
+import LocalStorage from "../containers/LocalStorage/LocalStorage";
 import {ROUTES} from '../stores/constants'
 const {PAGES} = ROUTES
 
@@ -24,6 +25,7 @@ const routes = (
             <div className='content-card'>
                 <Switch>
                     <Route exact path={PAGES.HOME} component={Home} />
+                    <Route exact path={PAGES.DEVELOP.LOCAL_STORAGE} component={LocalStorage} />
                     <Route component={NoMatch} />
                 </Switch>
             </div>

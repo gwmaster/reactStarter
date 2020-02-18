@@ -1,10 +1,12 @@
 import React from 'react'
 import createSagaMiddleware from 'redux-saga'
-import { combineReducers, applyMiddleware ,  createStore } from 'redux'
-import myReducers from './reducers'
+import { combineReducers, applyMiddleware ,  createStore ,  compose as composeEnhancer } from 'redux'
+import myReducers , {customSlicer} from './reducers'
 import mySaga from './sagas'
 import {toWorkerMiddleware} from 'redux-saga-worker'
 
+//localstorage redux
+import localstorage from 'redux-localstorage'
 // create worker
 import StoreWorker from './storeWorker/store.worker'
 // connected-react-router
@@ -32,7 +34,10 @@ export function configureStore() {
     ]
     const store = createStore(
         createRootReducer(history,myReducers),
-        applyMiddleware(...middleware)
+        composeEnhancer(
+            localstorage(null, { slicer: customSlicer }),
+            applyMiddleware(...middleware)
+        )
     )
     // then run the saga
     sagaMiddleware.run(mySaga)
