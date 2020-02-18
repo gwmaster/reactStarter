@@ -1,0 +1,10 @@
+const IS_DEVELOP = true;
+const FILE_CONFIG = {
+  IS_DEVELOP,
+  LOG: {
+    LOG_REDUX: true,
+    LOG_GLOBAL: true,
+    LOG_GLOBAL_LEVEL: 'INFO' // INFO,DEBUG,ERROR
+  }
+}
+self.FILE_CONFIG = FILE_CONFIG

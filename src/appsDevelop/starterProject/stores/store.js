@@ -4,7 +4,7 @@ import { combineReducers, applyMiddleware ,  createStore ,  compose as composeEn
 import myReducers , {customSlicer} from './reducers'
 import mySaga from './sagas'
 import {toWorkerMiddleware} from 'redux-saga-worker'
-
+import { initLog } from './Log'
 //localstorage redux
 import localstorage from 'redux-localstorage'
 // create worker
@@ -32,6 +32,8 @@ export function configureStore() {
         routerMiddleware(history),
         sagaMiddleware,
     ]
+    initLog(middleware)
+    // store init
     const store = createStore(
         createRootReducer(history,myReducers),
         composeEnhancer(

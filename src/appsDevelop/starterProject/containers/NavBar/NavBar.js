@@ -62,7 +62,7 @@ function NavBar(props) {
                 mode='vertical'
                 theme='dark'
                 onSelect = {onSelect}
-                inlineCollapsed={collapsed}
+                // inlineCollapsed={collapsed}
             >
                 <SubMenu title={<span><Icon type="tool" /><span>Develop</span></span>}>
                     <Menu.Item key={PAGES.DEVELOP.REST_API}>{getName(PAGES.DEVELOP.REST_API)}</Menu.Item>
