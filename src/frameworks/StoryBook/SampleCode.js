@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -19,14 +19,7 @@ const SampleCode = ({componentName , params : recivedParams = {}}) => {
                 return  `\t${name}=${JSON.stringify(value)}`
         }
     }
-
-
-    let code = `<${componentName} `;
-    code += '\n'
-    code += Object.keys(params).map((name,value) => parseParam(name)).join('\n')
-    code += '>'
-    children ?  code += `\n${children}\n` : false
-    code += `</${componentName}>`
+  let code = `<${componentName}\n${Object.keys(params).map((name,value) => parseParam(name)).join('\n')}>${children ?  `\n${children}\n` : ''}</${componentName}>`;
   return (
       <SyntaxHighlighter language="javascript" style={dark}>
           {code}

@@ -60,10 +60,10 @@ function NavBar(props) {
             <Menu
                 className={`menu ${collapsed ? 'nav-bar-folded' : 'nav-bar-unfolded'}`}
                 selectedKeys={pathname}
-                mode='vertical'
+                mode='inline'
                 theme='dark'
                 onSelect = {onSelect}
-                 inlineCollapsed={collapsed}
+                inlineCollapsed={collapsed}
             >
                 <SubMenu title={<span><ToolOutlined /><span>Develop</span></span>}>
                     <Menu.Item key={PAGES.DEVELOP.REST_API}>{getName(PAGES.DEVELOP.REST_API)}</Menu.Item>
