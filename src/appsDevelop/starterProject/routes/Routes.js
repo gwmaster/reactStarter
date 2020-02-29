@@ -7,6 +7,7 @@ import Home  from '../containers/Home/Home'
 import LocalStorage from "../containers/Develop/LocalStorage/LocalStorage";
 import ReducersViewer from "../containers/ReducersViewer/ReducersViewer";
 import I18 from '../containers/Develop/i18/I18'
+import RestAPI from "../containers/Develop/RestAPI/RestAPI";
 
 const {PAGES} = ROUTES
 
@@ -31,6 +32,7 @@ const routes = (
                     <Route exact path={PAGES.DEVELOP.LOCAL_STORAGE} component={LocalStorage} />
                     <Route exact path={PAGES.DEVELOP.REDUCERS_VIEWER} component={ReducersViewer} />
                     <Route exact path={PAGES.DEVELOP.I18} component={I18} />
+                    <Route exact path={PAGES.DEVELOP.REST_API} component={RestAPI} />
                     <Route component={NoMatch} />
                 </Switch>
             </div>

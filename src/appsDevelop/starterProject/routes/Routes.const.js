@@ -11,7 +11,6 @@ const PAGES = {
     ROUTES_EXAMPLE : `${DEVELOP}/routes-example`,
     LOCAL_STORAGE : `${DEVELOP}/local-storage`,
     REDUCERS_VIEWER: `${DEVELOP}/reducer-viewer`,
-
   }
 }
 

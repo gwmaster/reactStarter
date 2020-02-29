@@ -12,11 +12,16 @@ function I18(props) {
     const {i18SelectedLanguage , i18AvailableLanguages} = props
     return (
         <div>
+            "starterProject:start": "npm start -- --env.APP /appsDevelop/starterProject --env.TRANSLATE en,he,ru",
+            <br/>
+            src/appsDevelop/starterProject/assets-translate/  en.json , he.json , ru.json
+            <br/>
             i18SelectedLanguage : {JSON.stringify(i18SelectedLanguage)}
             <br/>
             i18AvailableLanguages :  {JSON.stringify(i18AvailableLanguages)}
             <br/>
             logo : {I18n.t(`logo`)} , `<Translate value="logo"/>
+            <br/>
             <I18Component/>
         </div>)
 }
