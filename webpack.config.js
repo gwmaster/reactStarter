@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+// set lazy loaded chunk files names
+const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const webpack = require('webpack')
@@ -84,6 +86,7 @@ module.exports = {
   },
   entry: './src/' + appFolder + '/' + appName + '/index.js',
   plugins: [
+    new AsyncChunkNames(),
     new HtmlWebPackPlugin({
       template: './src/' + appFolder + '/' + appName + '/index.html',
       filename: './index.html'
@@ -103,7 +106,11 @@ module.exports = {
 }
 
 module.exports.output = {
-  globalObject: 'this'
+  globalObject: 'this',
+  // filename: '[name].[hash].js',
+  filename: (chunkData) => {
+    return chunkData.chunk.name === 'main' ? '[name].js': '[name]/[name].js';
+  },
 }
 
 console.log('isDevelopment: ' + isDevelopment)
@@ -118,14 +125,11 @@ if (!isDevelopment) {
   module.exports.output = {
     path: __dirname + dist + '/' + appName,
     publicPath: './',
-    filename: '[name].bundle.js',
-    libraryTarget: 'umd',
-    library: 'yourName',
-    umdNamedDefine: true,
+    filename: '[name].[hash].js',
     globalObject: 'this',
-
   }
   module.exports.plugins = [
+    new AsyncChunkNames(),
     new HtmlWebPackPlugin({
       template: './src/' + appFolder + '/' + appName + '/index.html',
       filename: './index.html',

@@ -1,7 +1,6 @@
 import React from 'react';
 import {withKnobs, text, number, select, boolean, object , color} from '@storybook/addon-knobs';
 import Button from './Button';
-import '../../styles/index.less'
 import {action} from "@storybook/addon-actions";
 import SampleCode from '../../../../frameworks/StoryBook/SampleCode'
 

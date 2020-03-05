@@ -1,7 +1,7 @@
 import React, {useState , Fragment} from 'react'
 import {connect} from 'react-redux'
 import { Menu, Switch , Button } from 'antd';
-import {HomeOutlined,  MenuUnfoldOutlined , MenuFoldOutlined , ToolOutlined} from '@ant-design/icons'
+import {HomeOutlined,  MenuUnfoldOutlined , MenuFoldOutlined , ToolOutlined , LoadingOutlined} from '@ant-design/icons'
 const { SubMenu } = Menu;
 import {mapStoreToProps,mapActionsToProps} from 'fast-redux-reducer'
 import {RoutesActions} from '../../stores/actions'
@@ -72,6 +72,10 @@ function NavBar(props) {
                     <Menu.Item key={PAGES.DEVELOP.REDUCERS_VIEWER}>{getName(PAGES.DEVELOP.REDUCERS_VIEWER)}</Menu.Item>
                 </SubMenu>
                 <Menu.Item key={PAGES.HOME} ><span><HomeOutlined /><span>{getName(PAGES.HOME)}</span></span></Menu.Item>
+                <SubMenu title={<span><LoadingOutlined /><span>Lazy Pages</span></span>}>
+                    <Menu.Item key={PAGES.LAZY.PAGE1}>{getName(PAGES.LAZY.PAGE1)}</Menu.Item>
+                    <Menu.Item key={PAGES.LAZY.PAGE2}>{getName(PAGES.LAZY.PAGE2)}</Menu.Item>
+                </SubMenu>
             </Menu>
         </div>
     )

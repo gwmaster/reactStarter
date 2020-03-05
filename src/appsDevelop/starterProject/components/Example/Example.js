@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import {Button}  from 'antd'
 /**
  my component Example doc
  **/
 const Example = ({label , size , clickHandler}) => {
   return (
-      <button onClick={()=>clickHandler('test data')}>
-      Hello - {label} - {size}
-  </button>)
+      <Button type='primary' onClick={()=>clickHandler('test data')}>
+        Hello - {label} - {size}
+      </Button>)
 }
 
 Example.propTypes = {

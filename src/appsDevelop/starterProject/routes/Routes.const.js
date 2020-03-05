@@ -2,6 +2,7 @@ const pr = 'ROUTES_'
 
 const ROOT = ''
 const DEVELOP = `${ROOT}/develop`
+const LAZY = `${ROOT}/lazy`
 const PAGES = {
   HOME : `${ROOT}/home`,
   DEVELOP : {
@@ -11,6 +12,10 @@ const PAGES = {
     ROUTES_EXAMPLE : `${DEVELOP}/routes-example`,
     LOCAL_STORAGE : `${DEVELOP}/local-storage`,
     REDUCERS_VIEWER: `${DEVELOP}/reducer-viewer`,
+  },
+  LAZY : {
+    PAGE1 : `${LAZY}/page1`,
+    PAGE2 : `${LAZY}/page2`,
   }
 }
 

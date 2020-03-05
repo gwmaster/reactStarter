@@ -32,7 +32,7 @@ npm run docs:min
 |-----------------|---------------|
 | [webpack 4](https://webpack.js.org/)| [webpack 4, is FAST (up to 98% faster)!](https://medium.com/webpack/webpack-4-released-today-6cdb994702d4)
 | [ES6](https://medium.freecodecamp.org/ecmascript-2016-es7-features-86903c5cab70) | [ES7 Decorators in ReactJS](https://medium.com/@jihdeh/es7-decorators-in-reactjs-22f701a678cd) 
-| [React  16.8](https://reactjs.org/) | [What’s new in React 16.3](https://www.infoworld.com/article/3228113/javascript/whats-new-in-react-163-javascript-ui-library.html)   , [New lifecycles ](https://reactjs.org/blog/2018/03/29/react-v-16-3.html)   ,   [Portal](https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202)
+| [React  16.13](https://reactjs.org/) | [What’s new in React 16.3](https://www.infoworld.com/article/3228113/javascript/whats-new-in-react-163-javascript-ui-library.html)   , [New lifecycles ](https://reactjs.org/blog/2018/03/29/react-v-16-3.html)   ,   [Portal](https://hackernoon.com/using-a-react-16-portal-to-do-something-cool-2a2d627b0202)
 | [React Router v4](https://github.com/ReactTraining/react-router) | standard routing library for React. When you need to navigate through a React application with multiple views
 | [connected-react-router](https://github.com/supasate/connected-react-router) | Synchronize React Router v4 with redux store. Works for both redux-thunk and redux-saga.
 | [REDUX](https://github.com/reactjs/redux) | Redux is a predictable state container for JavaScript apps 
@@ -51,7 +51,7 @@ npm run docs:min
 
 | Components |  description |
 |-----------------|---------------|
-| [ant.design](https://ant.design/) | A design system with values of Nature and Determinacy for better user experience of enterprise applications
+| [ant.design 4.0](https://ant.design/) | A design system with values of Nature and Determinacy for better user experience of enterprise applications
 
 ## Tools
 
