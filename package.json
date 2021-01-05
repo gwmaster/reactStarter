@@ -60,7 +60,7 @@
   "dependencies": {
     "@ant-design/icons": "4.0.0",
     "antd": "4.0.0",
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "connected-react-router": "6.7.0",
     "fast-redux-reducer": "0.0.4",
     "js-logger": "1.6.0",
